@@ -6,6 +6,11 @@
 # `jekyll serve -l -H localhost`. If you change this file, please restart the 
 # server process.
 
+plugins: 
+  - jekyll-remote-theme
+remote_theme    : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    :   "dark" #"air","acqua","contrast","dirt",neon
+
 # Basic Site Settings
 locale                   : "en-US"
 title                    : "Prin DDI"
@@ -153,6 +158,7 @@ exclude:
   - .bundle
   - .jekyll-assets-cache
   - .sass-cache
+  - assets`
   - CHANGELOG
   - Capfile
   - Gemfile
