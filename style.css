@@ -27,8 +27,8 @@
 }
 
 .person img {
-    width: 100%; /* Ensures the image scales with the container */
-    height: auto;
+    width: 100px; /* Ensures the image scales with the container */
+    height: 100;
     border-radius: 5px; /* Optional for styling rounded corners */
 }
 
