@@ -8,5 +8,35 @@
         .navbar a:hover { background-color: #ddd; color: black; }
         .content { padding: 20px; }
     </style>
+
 </head>
 <body>
+
+.people-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjusts spacing to utilize available space */
+    padding: 0;
+}
+
+.person {
+    flex: 1 1 30%; /* Each person block takes up roughly 30% of the grid width */
+    margin: 10px; /* Provides spacing around each block */
+    text-align: center;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.person img {
+    width: 100%; /* Ensures the image scales with the container */
+    height: auto;
+    border-radius: 5px; /* Optional for styling rounded corners */
+}
+
+.person p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+}
+
+</body>
+</html>
