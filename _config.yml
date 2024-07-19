@@ -7,7 +7,7 @@ url: "https://PrinDDI.github.io" # the base hostname & protocol for your site
 
 navigation:
   - title: Home
-    url: /home/
+    url: /
   - title: People
     url: /people/
   - title: Publications
