@@ -2,5 +2,5 @@ title: PrinDDI Research Group
 email: contact@prinddi.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is the research group website for PrinDDI, focusing on innovative data science and economic research.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "https://PrinDDI.github.io" # the subpath of your site, e.g. /blog
 url: "https://PrinDDI.github.io" # the base hostname & protocol for your site
