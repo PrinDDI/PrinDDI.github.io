@@ -5,20 +5,23 @@
         body { 
             font-family: Arial, sans-serif; 
         }
-        .navbar { 
+        .navbar {
+            display: flex;          
+            justify-content: center;
+            align-items: center;    
             overflow: hidden; 
-            background-color: #333; 
+            background-color: #333;
+            padding: 0;             
         }
-        .navbar a { 
-            float: left; 
-            display: block; 
-            color: #f2f2f2; 
-            text-align: center; 
-            padding: 14px 16px; 
-            text-decoration: none; 
+        .navbar a {
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
         }
         .navbar a:hover { 
-            background-color: #ddd; 
+            background-color: #e6e6e6; 
             color: black; 
         }
         .content { 
@@ -27,7 +30,7 @@
         .people-grid {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around; /* Changed from 'space-between' to 'space-around' for even spacing */
+            justify-content: space-around; 
             padding: 0;
         }
         .person {
