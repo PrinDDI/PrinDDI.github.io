@@ -2,41 +2,52 @@
 <html>
 <head>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .navbar { overflow: hidden; background-color: #333; }
-        .navbar a { float: left; display: block; color: #f2f2f2; text-align: center; padding: 14px 16px; text-decoration: none; }
-        .navbar a:hover { background-color: #ddd; color: black; }
-        .content { padding: 20px; }
+        body { 
+            font-family: Arial, sans-serif; 
+        }
+        .navbar { 
+            overflow: hidden; 
+            background-color: #333; 
+        }
+        .navbar a { 
+            float: left; 
+            display: block; 
+            color: #f2f2f2; 
+            text-align: center; 
+            padding: 14px 16px; 
+            text-decoration: none; 
+        }
+        .navbar a:hover { 
+            background-color: #ddd; 
+            color: black; 
+        }
+        .content { 
+            padding: 20px; 
+        }
+        .people-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; /* Changed from 'space-between' to 'space-around' for even spacing */
+            padding: 0;
+        }
+        .person {
+            flex: 0 1 30%; /* Changed from 'flex: 1 1 30%' to 'flex: 0 1 30%' to prevent growth beyond 30% */
+            margin: 10px; /* Adjust as needed to fit three per row */
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .person img {
+            width: 100%; 
+            height: 60%;
+            border-radius: 5px;
+        }
+        .person p {
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
     </style>
-
 </head>
 <body>
-
-.people-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Adjusts spacing to utilize available space */
-    padding: 0;
-}
-
-.person {
-    flex: 1 1 30%; /* Each person block takes up roughly 30% of the grid width */
-    margin: 10px; /* Provides spacing around each block */
-    text-align: center;
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-}
-
-.person img {
-    width: 100px; /* Ensures the image scales with the container */
-    height: 100;
-    border-radius: 5px; /* Optional for styling rounded corners */
-}
-
-.person p {
-    font-size: 14px;
-    color: #333;
-    margin-top: 5px;
-}
-
 </body>
 </html>
