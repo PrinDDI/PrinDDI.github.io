@@ -8,7 +8,7 @@
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
-    color: #333;
+    color: #2c3e50; /* Navy blue */
     background-color: #f5f5f5; /* Light grey background */
 }
 
@@ -44,47 +44,61 @@ body {
     color: #ecf0f1; /* Light grey */
     text-decoration: none;
     font-weight: 500;
+    position: relative;
 }
 
-.navbar a:hover {
+.navbar a:hover,
+.navbar a.active {
     color: #3498db; /* Light blue */
+}
+
+.navbar a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3498db;
 }
 
 /* Hero Section */
 .hero {
     background: url('hero-image.jpg') no-repeat center center/cover;
     height: 100vh;
-    color: #ecf0f1; /* Light grey */
     text-align: center;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(44, 62, 80, 0.7); /* Navy blue overlay */
-}
-
-.hero h1 {
+.hero-content {
     position: relative;
-    top: 40%;
-    transform: translateY(-40%);
+    color: #ecf0f1; /* Light grey */
+    max-width: 800px;
+    padding: 0 1em;
+    z-index: 2; /* Ensure content is above any overlays */
+}
+
+/* Removed the overlay */
+.hero::after {
+    /* Overlay removed as per your preference */
+}
+
+/* Hero Text Styles */
+.hero h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
+    color: #2c3e50; /* Navy blue */
 }
 
 .hero p {
-    position: relative;
     font-size: 1.5em;
     margin-bottom: 1em;
 }
 
 .hero .btn {
-    position: relative;
     background-color: #3498db; /* Light blue */
     color: #fff;
     padding: 0.75em 1.5em;
@@ -157,6 +171,10 @@ p {
 .publication-item p {
     margin-bottom: 1em;
     color: #555; /* Dark grey */
+}
+
+.publication-item .btn {
+    margin-right: 10px;
 }
 
 /* Team List */
