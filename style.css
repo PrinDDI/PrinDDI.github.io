@@ -63,8 +63,33 @@ body {
 }
 
 /* Hero Section */
+
+/* Hero Title Styles */
+.hero-title {
+    display: inline-block;
+    background: url('pic/data_driven_innovation.png') no-repeat center center;
+    background-size: cover;
+    padding: 0.5em 1em;
+    color: #ffffff;
+    border-radius: 5px;
+    position: relative;
+}
+
+.hero-title::after {
+    /* Optional: Add an overlay for better readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    z-index: -1;
+}
+
 .hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
+    background: url('pic/data_driven_innovation.png') no-repeat center center/cover;
     height: 100vh;
     text-align: center;
     position: relative;
@@ -90,16 +115,17 @@ body {
 .hero h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
-    color: #2c3e50; /* Navy blue */
+    color: #f25322; /* Navy blue */
 }
 
 .hero p {
     font-size: 1.5em;
     margin-bottom: 1em;
+    color: #f25322; /* Navy blue */
 }
 
 .hero .btn {
-    background-color: #3498db; /* Light blue */
+    background-color: #3a779f; /* Light blue */
     color: #fff;
     padding: 0.75em 1.5em;
     text-decoration: none;
