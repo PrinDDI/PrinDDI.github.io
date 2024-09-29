@@ -62,9 +62,17 @@
         <p>&copy; 2023 Research Group. All rights reserved.</p>
     </footer>
 
-    <!-- Background Music -->
-    <audio controls autoplay loop style="display: none;">
-        <source src="ABBA - Dancing Queen.mp3" type="audio/mpeg">
-    </audio>
+  <!-- Background Music -->
+  <audio id="background-music" autoplay loop style="display: none;">
+    <source src="01Intro.mp3" type="audio/mpeg">
+</audio>
+
+<!-- JavaScript to Set Volume -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var audio = document.getElementById('background-music');
+        audio.volume = 0.1; // Set volume between 0.0 (silent) and 1.0 (full volume)
+    });
+</script>
 </body>
 </html>
