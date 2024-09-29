@@ -1,63 +1,235 @@
-<!DOCTYPE html>
-<html>
-<head>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { 
-            font-family: 'Roboto', sans-serif;
-            margin:0;
-            padding:0;
-            box-sizing: border-box; 
-        }
-        .navbar {
-            display: flex;          
-            justify-content: center;
-            align-items: center;    
-            overflow: hidden; 
-            background-color: #333;
-            padding: 0;             
-        }
-        .navbar a {
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 50px 16px;
-            text-decoration: none;
-            font-size:60;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        }
-        .navbar a:hover { 
-            background-color: #e6e6e6; 
-            color: black; 
-        }
-        .content { 
-            text-align: center;
-            padding: 20px; 
-        }
-        .people-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around; 
-            padding: 0;
-        }
-        .person {
-            flex: 0 1 30%; /* Changed from 'flex: 1 1 30%' to 'flex: 0 1 30%' to prevent growth beyond 30% */
-            margin: 10px; /* Adjust as needed to fit three per row */
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .person img {
-            width: 100%; 
-            height: auto;
-            border-radius: 5px;
-        }
-        .person p {
-            font-size: 14px;
-            color: #333;
-            margin-top: 5px;
-        }
-    </style>
-</head>
-<body>
-</body>
-</html>
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5; /* Light grey background */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50; /* Navy blue */
+    padding: 1em 2em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #ecf0f1; /* Light grey */
+    font-size: 1.5em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin-left: 1.5em;
+}
+
+.navbar a {
+    color: #ecf0f1; /* Light grey */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #3498db; /* Light blue */
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: #ecf0f1; /* Light grey */
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(44, 62, 80, 0.7); /* Navy blue overlay */
+}
+
+.hero h1 {
+    position: relative;
+    top: 40%;
+    transform: translateY(-40%);
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    position: relative;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.hero .btn {
+    position: relative;
+    background-color: #3498db; /* Light blue */
+    color: #fff;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+/* Sections */
+section {
+    padding: 4em 2em;
+    text-align: center;
+    background-color: #ecf0f1; /* Light grey */
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    color: #2c3e50; /* Navy blue */
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #2c3e50; /* Navy blue */
+}
+
+/* Buttons */
+.btn {
+    background-color: #2c3e50; /* Navy blue */
+    color: #ecf0f1; /* Light grey */
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1em;
+}
+
+.btn:hover {
+    background-color: #1a252f; /* Darker navy blue */
+}
+
+/* Publications List */
+.publications-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.publication-item {
+    background-color: #fff; /* White background */
+    padding: 2em;
+    margin: 1em;
+    width: 300px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.publication-item h3 {
+    margin-bottom: 0.5em;
+    color: #2c3e50; /* Navy blue */
+}
+
+.publication-item p {
+    margin-bottom: 1em;
+    color: #555; /* Dark grey */
+}
+
+/* Team List */
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-member {
+    background-color: #fff; /* White background */
+    padding: 2em;
+    margin: 1em;
+    width: 250px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+.team-member h3 {
+    margin-bottom: 0.5em;
+    color: #2c3e50; /* Navy blue */
+}
+
+.team-member p {
+    font-size: 0.9em;
+    color: #555; /* Dark grey */
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50; /* Navy blue */
+    color: #ecf0f1; /* Light grey */
+    padding: 1em 0;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        background-color: #2c3e50;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        display: none;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 1em 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .publications-list, .team-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}

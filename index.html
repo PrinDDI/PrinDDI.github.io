@@ -2,33 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Group Website</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for elegant typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">Research Group</div>
+            <nav>
+                <ul>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="people.html">People</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div class="navbar">
-        <a href="publications.html">Publications</a>
-        <a href="people.html">People</a>
-    </div>
-
-    <div class="content">
+    <!-- Hero Section -->
+    <section class="hero">
         <h1>Welcome to Our Research Group</h1>
-        <p>Introduction to the group, main research areas, and significant achievements.</p>
-    </div>
+        <p>Advancing the frontiers of science and technology.</p>
+        <a href="publications.html" class="btn">Explore Publications</a>
+    </section>
 
-    <div class="content">
-        <h1>Publications</h1>
-        <p>List of recent publications by the research group. Could link to more detailed pages or databases.</p>
-    </div>
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p>Our group focuses on groundbreaking research in various scientific fields. We aim to innovate and contribute significantly to the scientific community.</p>
+    </section>
 
-    <div id="People" class="content">
-        <h1>People</h1>
-        <p>Information about the team members, including roles, bios, and academic backgrounds.</p>
-    </div>
-    <audio controls autoplay loop>
+    <!-- Publications Preview -->
+    <section class="publications-preview">
+        <h2>Recent Publications</h2>
+        <div class="publications-list">
+            <!-- Add publication items here -->
+        </div>
+        <a href="publications.html" class="btn">View All Publications</a>
+    </section>
+
+    <!-- Team Preview -->
+    <section class="team-preview">
+        <h2>Our Team</h2>
+        <div class="team-list">
+            <!-- Add team members here -->
+        </div>
+        <a href="people.html" class="btn">Meet the Team</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Research Group. All rights reserved.</p>
+    </footer>
+
+    <!-- Background Music -->
+    <audio controls autoplay loop style="display: none;">
         <source src="ABBA - Dancing Queen.mp3" type="audio/mpeg">
     </audio>
 </body>
