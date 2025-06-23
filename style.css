@@ -4,14 +4,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
     color: #2d3436; /* Refined dark gray for improved readability */
     background-color: #f8f9fa; /* Subtle off-white background */
 }
-
 /* Navbar */
 .navbar {
     display: flex;
@@ -24,7 +22,6 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle elevation */
 }
-
 .logo {
     color: #ffffff; /* Pure white for maximum contrast */
     font-size: 1.5em;
@@ -32,20 +29,16 @@ body {
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .logo:hover {
     color: #74b9ff; /* Soft blue highlight on hover */
 }
-
 .navbar ul {
     list-style: none;
     display: flex;
 }
-
 .navbar li {
     margin-left: 1.5em;
 }
-
 .navbar a {
     color: #dfe6e9; /* Light gray with slight blue tint */
     text-decoration: none;
@@ -53,12 +46,10 @@ body {
     position: relative;
     transition: color 0.3s ease;
 }
-
 .navbar a:hover,
 .navbar a.active {
     color: #74b9ff; /* Soft blue for interactive elements */
 }
-
 .navbar a.active::after {
     content: '';
     position: absolute;
@@ -69,7 +60,6 @@ body {
     background-color: #74b9ff;
     transition: background-color 0.3s ease;
 }
-
 /* Hero Section */
 /* Hero Title Styles */
 .hero-title {
@@ -81,7 +71,6 @@ body {
     border-radius: 5px;
     position: relative;
 }
-
 .hero-title::after {
     /* Optional: Add an overlay for better readability */
     content: '';
@@ -94,7 +83,6 @@ body {
     border-radius: 5px;
     z-index: -1;
 }
-
 .hero {
     background: url('pic/data_driven_innovation.png') no-repeat center center/cover;
     height: 100vh;
@@ -104,7 +92,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 .hero-content {
     position: relative;
     color: #ffffff; /* Pure white for maximum contrast */
@@ -115,7 +102,6 @@ body {
     border-radius: 8px;
     backdrop-filter: blur(5px); /* Modern blur effect for depth */
 }
-
 /* Hero Text Styles */
 .hero h1 {
     font-size: 3em;
@@ -123,13 +109,11 @@ body {
     color: #ffffff; /* Pure white for contrast against overlay */
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
 }
-
 .hero p {
     font-size: 1.5em;
     margin-bottom: 1em;
     color: #dfe6e9; /* Light gray with slight blue tint */
 }
-
 .hero .btn {
     background-color: #0984e3; /* Vibrant blue */
     color: #fff;
@@ -140,13 +124,11 @@ body {
     transition: all 0.3s ease;
     border: none;
 }
-
 .hero .btn:hover {
     background-color: #0652DD; /* Deeper blue on hover */
     transform: translateY(-2px); /* Subtle lift effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on hover */
 }
-
 /* Sections */
 section {
     padding: 4em 2em;
@@ -154,11 +136,9 @@ section {
     background-color: #ffffff; /* Clean white for content sections */
     border-bottom: 1px solid #e6e6e6; /* Subtle separation */
 }
-
 section:nth-child(even) {
     background-color: #f1f2f6; /* Alternating subtle background color */
 }
-
 h2 {
     font-size: 2.5em;
     margin-bottom: 1em;
@@ -166,7 +146,6 @@ h2 {
     position: relative;
     display: inline-block;
 }
-
 h2::after {
     content: '';
     display: block;
@@ -175,7 +154,6 @@ h2::after {
     background-color: #0984e3;
     margin: 0.3em auto 0;
 }
-
 p {
     font-size: 1.1em;
     line-height: 1.6;
@@ -183,7 +161,6 @@ p {
     max-width: 800px;
     margin: 0 auto;
 }
-
 /* Buttons */
 .btn {
     background-color: #0984e3; /* Vibrant blue */
@@ -197,13 +174,11 @@ p {
     transition: all 0.3s ease;
     border: none;
 }
-
 .btn:hover {
     background-color: #0652DD; /* Deeper blue on hover */
     transform: translateY(-2px); /* Subtle lift effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on hover */
 }
-
 /* Publications List */
 .publications-list {
     display: flex;
@@ -212,7 +187,6 @@ p {
     gap: 2em; /* Uniform spacing */
     margin-top: 2em;
 }
-
 .publication-item {
     background-color: #fff; /* White background */
     padding: 2em;
@@ -223,29 +197,24 @@ p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #e6e6e6;
 }
-
 .publication-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
-
 .publication-item h3 {
     margin-bottom: 0.5em;
     color: #1e3799; /* Rich navy blue */
 }
-
 .publication-item p {
     margin-bottom: 1em;
     color: #636e72; /* Medium gray for secondary text */
     font-size: 0.95em;
 }
-
 .publication-item .btn {
     margin-right: 10px;
     padding: 0.5em 1em; /* Slightly smaller buttons */
     font-size: 0.9em;
 }
-
 /* Team List */
 .team-list {
     display: flex;
@@ -254,7 +223,6 @@ p {
     gap: 2em; /* Uniform spacing */
     margin-top: 2em;
 }
-
 .team-member {
     background-color: #fff; /* White background */
     padding: 2em;
@@ -265,12 +233,10 @@ p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #e6e6e6;
 }
-
 .team-member:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
-
 .team-member img {
     width: 150px;
     height: 150px;
@@ -279,25 +245,227 @@ p {
     margin-bottom: 1em;
     border: 4px solid #f1f2f6; /* Subtle border */
 }
-
 .team-member h3 {
     margin-bottom: 0.5em;
     color: #1e3799; /* Rich navy blue */
 }
-
 .team-member p {
     font-size: 0.9em;
     color: #636e72; /* Medium gray for secondary text */
 }
 
-/* Footer */
+/* Events Grid Layout */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+/* Event Card Styling */
+.event-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.event-card.featured {
+    border-left: 4px solid #1e3799;
+}
+
+/* Event Header with Date Badge */
+.event-header {
+    position: relative;
+    height: 60px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.event-date-badge {
+    background: #1e3799;
+    color: white;
+    border-radius: 6px;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    min-width: 60px;
+}
+
+.event-date-badge .day {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.event-date-badge .month {
+    display: block;
+    font-size: 0.8rem;
+    line-height: 1;
+    margin: 2px 0;
+}
+
+.event-date-badge .year {
+    display: block;
+    font-size: 0.7rem;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+/* Event Content */
+.event-content {
+    padding: 1.5rem;
+}
+
+.event-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: #1e3799;
+    line-height: 1.3;
+}
+
+.event-type {
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 0 0 1rem 0;
+}
+
+.event-institutions {
+    font-size: 0.85rem;
+    color: #495057;
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.event-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Event Footer with Buttons */
+.event-footer {
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.btn-website, .btn-program {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-website {
+    background: #1e3799;
+    color: white;
+}
+
+.btn-website:hover {
+    background: #0652DD;
+}
+
+.btn-program {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-program:hover {
+    background: #5a6268;
+}
+
+/* Section Styling for Events */
+.events {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.events h1 {
+    text-align: center;
+    color: #1e3799;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+/* Academic Footer Styling */
+.academic-footer {
+    background: #1e3799;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.footer-left {
+    flex: 0 0 auto;
+}
+
+.funding-logos {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+    max-width: 60%;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 500;
+    color: #dfe6e9;
+}
+
+.funding-info {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin: 0;
+    opacity: 0.9;
+    text-align: justify;
+    color: #dfe6e9;
+}
+
+/* Standard Footer (for pages without academic footer) */
 footer {
     background-color: #1e3799; /* Rich navy blue */
     color: #dfe6e9; /* Light gray with slight blue tint */
     padding: 2em 0;
     text-align: center;
 }
-
 footer p {
     color: #dfe6e9; /* Light gray with slight blue tint */
     font-size: 0.9em;
@@ -346,5 +514,45 @@ footer p {
     .publication-item, .team-member {
         width: 100%;
         max-width: 300px;
+    }
+    
+    /* Events Grid Responsive */
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .event-content {
+        padding: 1rem;
+    }
+    
+    .event-footer {
+        padding: 0.75rem 1rem;
+    }
+    
+    .event-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* Academic Footer Responsive */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-right {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .funding-info {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    
+    .funding-logos {
+        max-height: 60px;
     }
 }
