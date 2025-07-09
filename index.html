@@ -5,7 +5,75 @@
     <title>Research Group Website</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts for elegant typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Temporary inline styles for expandable sections */
+        .project-section {
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        
+        .expandable {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .expandable-header {
+            padding: 20px 30px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            font-size: 1.3em;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .expandable-header:hover {
+            background-color: #2980b9;
+        }
+        
+        .expandable-header::after {
+            content: '+';
+            font-size: 1.5em;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+        
+        .expandable.active .expandable-header::after {
+            transform: rotate(45deg);
+        }
+        
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 30px;
+        }
+        
+        .expandable.active .expandable-content {
+            max-height: 500px;
+            padding: 20px 30px 30px;
+        }
+        
+        .subsection h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .hero .project-acronym {
+            font-size: 1.8em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -26,36 +94,58 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to Our Research Group</h1>
+            <h1>[FULL PROJECT NAME]</h1>
+            <p class="project-acronym">([PROJECT ACRONYM])</p>
             <p>Advancing the frontiers of science and technology.</p>
             <a href="publications.html" class="btn">Explore Publications</a>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section class="about">
-        <h2>About the Research Group</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet eros quis nunc interdum fermentum. Nullam non ipsum eu velit consectetur consequat. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, euismod aliquet ligula nunc id nisl. Phasellus eget sapien ac quam efficitur sollicitudin.</p>
-    </section>
-
-    <!-- Publications Preview -->
-  <!--   <section class="publications-preview">
-        <h2>Recent Publications</h2>
-        <div class="publications-list">
-            <!-- Add publication items here -->
-            <!-- For brevity, left empty -->
-   <!--      </div>
-        <a href="publications.html" class="btn">View All Publications</a>
-    </section>
-
-    <!-- Team Preview -->
-    <section class="team-preview">
-        <h2>Our Team</h2>
-        <div class="team-list">
-            <!-- Add team members here -->
-            <!-- For brevity, left empty -->
+    <!-- Project Section -->
+    <section class="project-section">
+        <h2 style="text-align: center; margin-bottom: 40px; font-size: 2em; color: #2c3e50;">About the Research</h2>
+        
+        <!-- The Project Expandable -->
+        <div class="expandable" id="project-expandable">
+            <div class="expandable-header" onclick="toggleExpandable('project-expandable')">
+                The Project
+            </div>
+            <div class="expandable-content">
+                <div class="subsection">
+                    <h3>Objectives</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. The main objectives of this research project include:</p>
+                    <ul>
+                        <li>Objective 1: Description of the first main objective</li>
+                        <li>Objective 2: Description of the second main objective</li>
+                        <li>Objective 3: Description of the third main objective</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3>Main Tasks</h3>
+                    <p>The project is structured around the following key tasks:</p>
+                    <ul>
+                        <li>Task 1: Description of the first main task</li>
+                        <li>Task 2: Description of the second main task</li>
+                        <li>Task 3: Description of the third main task</li>
+                        <li>Task 4: Description of the fourth main task</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <a href="people.html" class="btn">Meet the Team</a>
+        
+        <!-- The Team Expandable -->
+        <div class="expandable" id="team-expandable">
+            <div class="expandable-header" onclick="toggleExpandable('team-expandable')">
+                The Team
+            </div>
+            <div class="expandable-content">
+                <p>Our research team consists of experienced academics and researchers from various disciplines, working together to achieve the project objectives.</p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="people.html" class="btn" style="display: inline-block; padding: 10px 30px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">View Team Profiles</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -93,18 +183,12 @@
         </div>
     </footer>
 
-
-  <!-- Background Music -->
-  <!-- <audio id="background-music" autoplay loop style="display: none;">
-    <source src="01Intro.mp3" type="audio/mpeg">
-</audio> -->
-
-<!-- JavaScript to Set Volume -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var audio = document.getElementById('background-music');
-        audio.volume = 0.1; // Set volume between 0.0 (silent) and 1.0 (full volume)
-    });
-</script>
+    <!-- JavaScript for expandable sections -->
+    <script>
+        function toggleExpandable(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
