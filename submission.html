@@ -6,37 +6,36 @@
     <title>Submit Your Paper</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* --- STILE INVARIATO --- */
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Roboto', sans-serif; background:#f8f9fa; min-height:100vh; display:flex; flex-direction:column; }
-        .navbar { background:#1e3799; padding:1rem; }
-        .navbar-container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
-        .logo { color:white; font-size:1.5rem; font-weight:700; }
-        nav ul { list-style:none; display:flex; gap:2rem; }
-        nav a { color:white; text-decoration:none; }
-        nav a:hover { color:#dfe6f1; }
-        .container { max-width:700px; margin:3rem auto; padding:0 2rem; flex:1; }
-        .form-card { background:white; border-radius:10px; padding:3rem; box-shadow:0 5px 20px rgba(0,0,0,0.1); border:1px solid #e9ecef; }
-        h1 { color:#1e3799; margin-bottom:0.5rem; }
-        .subtitle { color:#6c757d; margin-bottom:2rem; }
-        .form-group { margin-bottom:1.5rem; }
-        label { display:block; margin-bottom:0.5rem; font-weight:500; color:#1e3799; }
-        .required { color:#e74c3c; }
-        input, textarea, select { width:100%; padding:0.75rem; border:1px solid #e9ecef; border-radius:6px; font-size:1rem; background:#fff; }
-        input:focus, textarea:focus, select:focus { outline:none; border-color:#1e3799; }
-        textarea { resize:vertical; min-height:120px; }
-        .file-upload { position:relative; display:inline-block; width:100%; }
-        .file-label { display:block; padding:1rem; background:#f8f9fa; border:2px dashed #dee2e6; border-radius:6px; text-align:center; cursor:pointer; }
-        .file-label:hover { background:#e9ecef; border-color:#1e3799; }
-        input[type="file"] { display:none; }
-        .submit-btn { background:#1e3799; color:white; padding:1rem 2rem; border:none; border-radius:6px; font-size:1.1rem; font-weight:600; cursor:pointer; width:100%; transition:background 0.3s ease; }
-        .submit-btn:hover { background:#1e3d6f; }
-        .info-box { background:#e8f5e9; padding:1rem; border-radius:6px; margin-bottom:2rem; border-left:4px solid #4caf50; }
-        .deadline { color:#e74c3c; font-weight:bold; }
-        footer { background:#1e3799; color:white; padding:2rem 1rem; margin-top:3rem; }
-        .footer-container { max-width:1200px; margin:0 auto; text-align:center; }
-        .footer-container p { margin-bottom:0.5rem; font-size:0.95rem; }
-        .footer-container .credits { margin-top:1rem; font-size:0.85rem; opacity:0.85; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: #f8f9fa; min-height: 100vh; display: flex; flex-direction: column; }
+        .navbar { background: #1e3799; padding: 1rem; }
+        .navbar-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: white; font-size: 1.5rem; font-weight: 700; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: white; text-decoration: none; }
+        nav a:hover { color: #dfe6f1; }
+        .container { max-width: 700px; margin: 3rem auto; padding: 0 2rem; flex: 1; }
+        .form-card { background: white; border-radius: 10px; padding: 3rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border: 1px solid #e9ecef; }
+        h1 { color: #1e3799; margin-bottom: 0.5rem; }
+        .subtitle { color: #6c757d; margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: #1e3799; }
+        .required { color: #e74c3c; }
+        input, textarea, select { width: 100%; padding: 0.75rem; border: 1px solid #e9ecef; border-radius: 6px; font-size: 1rem; background: #fff; }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: #1e3799; }
+        textarea { resize: vertical; min-height: 120px; }
+        .file-upload { position: relative; display: inline-block; width: 100%; }
+        .file-label { display: block; padding: 1rem; background: #f8f9fa; border: 2px dashed #dee2e6; border-radius: 6px; text-align: center; cursor: pointer; }
+        .file-label:hover { background: #e9ecef; border-color: #1e3799; }
+        input[type="file"] { display: none; }
+        .submit-btn { background: #1e3799; color: white; padding: 1rem 2rem; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.3s ease; }
+        .submit-btn:hover { background: #1e3d6f; }
+        .info-box { background: #e8f5e9; padding: 1rem; border-radius: 6px; margin-bottom: 2rem; border-left: 4px solid #4caf50; }
+        .deadline { color: #e74c3c; font-weight: bold; }
+        footer { background: #1e3799; color: white; padding: 2rem 1rem; margin-top: 3rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .footer-container p { margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .footer-container .credits { margin-top: 1rem; font-size: 0.85rem; opacity: 0.85; }
     </style>
 </head>
 <body>
@@ -50,7 +49,7 @@
                     <li><a href="publications.html">Research Contributions</a></li>
                     <li><a href="people.html" class="active">People</a></li>
                     <li><a href="events.html">Events</a></li> 
-                    <li><a href="#" style="color:#dfe6f1; font-weight:bold;">Submit</a></li>
+                    <li><a href="#" style="color: #dfe6f1; font-weight: bold;">Submit</a></li>
                 </ul>
             </nav>
         </div>
@@ -68,7 +67,7 @@
                 📧 Submissions to: ddivenice@gmail.com
             </div>
             
-            <!-- Form with dynamic subject -->
+            <!-- Form -->
             <form id="paperForm" method="POST" action="https://formsubmit.co/ba7678fa86f2724e65ee512ab13e57d9" enctype="multipart/form-data">
                 <!-- Hidden fields -->
                 <input type="hidden" name="_subject" value="New Paper Submission">
@@ -133,13 +132,12 @@
     </div>
 
     <script>
-        // Aggiorna il file name
         function updateFileName(input) {
             const fileName = input.files[0]?.name || '📁 Click to select PDF file';
             document.getElementById('fileName').textContent = fileName;
         }
 
-        // Aggiorna l'oggetto email con il titolo del paper
+        // Aggiorna l'oggetto dell'email con il titolo del paper
         document.getElementById('paperForm').addEventListener('submit', function() {
             const title = document.getElementById('paper_title').value.trim();
             this.querySelector('input[name="_subject"]').value = `New Paper Submission - ${title}`;
@@ -147,33 +145,24 @@
     </script>
 
     <!-- Footer -->
-    <footer class="academic-footer" style="background-color:#2c3e50; color:#ffffff; padding:40px 0;">
-        <div class="footer-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
-            <div class="footer-logo-section" style="text-align:center; margin-bottom:30px;">
-                <img src="pic/intestazione.png" alt="Funding Organizations" class="funding-logos" style="width:100%; max-width:1900px; height:auto;">
+    <footer class="academic-footer" style="background-color: #2c3e50; color: #ffffff; padding: 40px 0;">
+        <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="footer-logo-section" style="text-align: center; margin-bottom: 30px;">
+                <img src="pic/intestazione.png" alt="Funding Organizations" class="funding-logos" style="width: 100%; max-width: 1900px; height: auto;">
             </div>
-            <div class="footer-info-section" style="text-align:center;">
-                <p class="copyright" style="margin-bottom:20px; font-size:14px; color:#ecf0f1;">&copy; 2025 All rights reserved.</p>
-                <div class="funding-info" style="font-size:13px; line-height:1.8; color:#bdc3c7; max-width:800px; margin:0 auto;">
-                    <p style="margin-bottom:15px;"><strong style="color:#ecf0f1; font-size:15px;">Research Projects</strong></p>
-                    <p style="margin-bottom:10px;">
-                        • "Data Driven Innovation. Measuring its Effects on Industries, Firms and Business Models"<br>
-                        <span style="display:block; margin-left:20px; margin-top:5px;">Prot. 2022JHZL37CUP - CUP H53D23002450006</span>
-                    </p>
-                    <p style="margin-bottom:20px;">
-                        • "Managing sustainability tensions for change"<br>
-                        <span style="display:block; margin-left:20px; margin-top:5px;">Prot. 20222X8L5C - CUP H53D23002120006</span>
-                    </p>
-                    <div style="border-top:1px solid #34495e; padding-top:20px; margin-top:20px;">
-                        <p style="margin:0;">
-                            Finanziati dall'Unione Europea – Next Generation EU<br>
-                            PNRR – Missione 4 Componente 2, Investimento 1.1<br>
-                            Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN)
-                        </p>
+            <div class="footer-info-section" style="text-align: center;">
+                <p class="copyright" style="margin-bottom: 20px; font-size: 14px; color: #ecf0f1;">&copy; 2025 All rights reserved.</p>
+                <div class="funding-info" style="font-size: 13px; line-height: 1.8; color: #bdc3c7; max-width: 800px; margin: 0 auto;">
+                    <p style="margin-bottom: 15px;"><strong style="color: #ecf0f1; font-size: 15px;">Research Projects</strong></p>
+                    <p style="margin-bottom: 10px;">• "Data Driven Innovation. Measuring its Effects on Industries, Firms and Business Models"<br><span style="display: block; margin-left: 20px; margin-top: 5px;">Prot. 2022JHZL37CUP - CUP H53D23002450006</span></p>
+                    <p style="margin-bottom: 20px;">• "Managing sustainability tensions for change"<br><span style="display: block; margin-left: 20px; margin-top: 5px;">Prot. 20222X8L5C - CUP H53D23002120006</span></p>
+                    <div style="border-top: 1px solid #34495e; padding-top: 20px; margin-top: 20px;">
+                        <p style="margin: 0;">Finanziati dall'Unione Europea – Next Generation EU<br>PNRR – Missione 4 Componente 2, Investimento 1.1<br>Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN)</p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
 </body>
 </html>
