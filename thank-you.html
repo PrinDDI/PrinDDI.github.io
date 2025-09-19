@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit Your Paper</title>
+    <title>Submission Received - Thank You</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -16,6 +16,8 @@
             font-family: 'Roboto', sans-serif;
             background: #f5f7fa;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Navigation */
@@ -49,124 +51,60 @@
             text-decoration: none;
         }
 
-        nav a:hover {
-            color: #3498db;
-        }
-
-        /* Container */
+        /* Main Content */
         .container {
-            max-width: 700px;
-            margin: 3rem auto;
-            padding: 0 2rem;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
 
-        /* Form Card */
-        .form-card {
+        .success-card {
             background: white;
             border-radius: 10px;
             padding: 3rem;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
         }
 
         h1 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
+            color: #27ae60;
+            margin-bottom: 1rem;
         }
 
-        .subtitle {
-            color: #7f8c8d;
-            margin-bottom: 2rem;
-        }
-
-        /* Form Groups */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+        p {
             color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
-        .required {
-            color: #e74c3c;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #ecf0f1;
-            border-radius: 6px;
-            font-size: 1rem;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #3498db;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* File Upload */
-        .file-upload {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .file-label {
-            display: block;
-            padding: 1rem;
+        .details {
             background: #f8f9fa;
-            border: 2px dashed #dee2e6;
-            border-radius: 6px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .file-label:hover {
-            background: #e9ecef;
-            border-color: #3498db;
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        /* Submit Button */
-        .submit-btn {
-            background: #27ae60;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: #229954;
-        }
-
-        /* Info Box */
-        .info-box {
-            background: #e8f5e9;
             padding: 1rem;
             border-radius: 6px;
-            margin-bottom: 2rem;
-            border-left: 4px solid #4caf50;
+            margin: 2rem 0;
+            text-align: left;
         }
 
-        .deadline {
-            color: #e74c3c;
-            font-weight: bold;
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #2980b9;
         }
     </style>
 </head>
@@ -179,93 +117,34 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="events.html">Events</a></li>
-                    <li><a href="#" style="color: #3498db;">Submit</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Success Message -->
     <div class="container">
-        <div class="form-card">
-            <h1>Submit Your Paper</h1>
-            <p class="subtitle">Data, Algorithms, and Innovation in Firms Workshop</p>
+        <div class="success-card">
+            <div class="success-icon">✅</div>
+            <h1>Submission Received!</h1>
+            <p>Thank you for submitting your paper to the "Data, Algorithms, and Innovation in Firms" workshop.</p>
             
-            <div class="info-box">
-                📅 <span class="deadline">Deadline: November 15, 2025</span><br>
-                📍 Venice, January 29-30, 2026<br>
-                📧 Submissions to: ddivenice@gmail.com
+            <div class="details">
+                <p><strong>What happens next?</strong></p>
+                <p>• You will receive a confirmation email shortly</p>
+                <p>• We will review your submission</p>
+                <p>• Decision notification by December 1, 2025</p>
+                <p>• Workshop dates: January 29-30, 2026</p>
             </div>
             
-            <!-- Single functional form with PDF upload -->
-            <form method="POST" action="https://formsubmit.co/a0b5d3f83e6286dec5b646b8f355cedf" enctype="multipart/form-data">
-                <!-- Hidden fields -->
-                <input type="hidden" name="_subject" value="New Paper Submission">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://prinddi.github.io/thank-you.html">
-                
-                <!-- Name -->
-                <div class="form-group">
-                    <label>Your Name <span class="required">*</span></label>
-                    <input type="text" name="name" required>
-                </div>
-                
-                <!-- Email -->
-                <div class="form-group">
-                    <label>Email <span class="required">*</span></label>
-                    <input type="email" name="email" required>
-                </div>
-                
-                <!-- Institution -->
-                <div class="form-group">
-                    <label>Institution <span class="required">*</span></label>
-                    <input type="text" name="institution" required>
-                </div>
-                
-                <!-- Paper Title -->
-                <div class="form-group">
-                    <label>Paper Title <span class="required">*</span></label>
-                    <input type="text" name="paper_title" required>
-                </div>
-                
-                <!-- Co-authors -->
-                <div class="form-group">
-                    <label>Co-authors (if any)</label>
-                    <input type="text" name="coauthors" placeholder="Name (Institution), Name (Institution)">
-                </div>
-                
-                <!-- Submission Type -->
-                <div class="form-group">
-                    <label>Submission Type <span class="required">*</span></label>
-                    <select name="submission_type" required>
-                        <option value="">Select...</option>
-                        <option value="Full Paper">Full Paper</option>
-                        <option value="Extended Abstract">Extended Abstract (800-1,500 words)</option>
-                    </select>
-                </div>
-                
-                <!-- File Upload -->
-                <div class="form-group">
-                    <label>Upload PDF <span class="required">*</span></label>
-                    <div class="file-upload">
-                        <label for="file" class="file-label">
-                            <span id="fileName">📁 Click to select PDF file</span>
-                        </label>
-                        <input type="file" id="file" name="attachment" accept=".pdf" required onchange="updateFileName(this)">
-                    </div>
-                </div>
-                
-                <!-- Submit -->
-                <button type="submit" class="submit-btn">Submit Paper</button>
-            </form>
+            <p>If you have any questions, please contact us at:<br>
+            <strong>ddivenice@gmail.com</strong></p>
+            
+            <div style="margin-top: 2rem;">
+                <a href="index.html" class="btn">Return to Home</a>
+                <a href="events.html" class="btn">View Events</a>
+            </div>
         </div>
     </div>
-
-    <script>
-        function updateFileName(input) {
-            const fileName = input.files[0]?.name || '📁 Click to select PDF file';
-            document.getElementById('fileName').textContent = fileName;
-        }
-    </script>
 </body>
 </html>
