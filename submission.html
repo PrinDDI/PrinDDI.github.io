@@ -30,8 +30,13 @@
         input[type="file"] { display: none; }
         .submit-btn { background: #1e3799; color: white; padding: 1rem 2rem; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.3s ease; }
         .submit-btn:hover { background: #1e3d6f; }
+        .submit-btn:disabled { background: #6c757d; cursor: not-allowed; }
         .info-box { background: #e8f5e9; padding: 1rem; border-radius: 6px; margin-bottom: 2rem; border-left: 4px solid #4caf50; }
         .deadline { color: #e74c3c; font-weight: bold; }
+        .error-msg { color: #e74c3c; font-size: 0.9rem; margin-top: 0.5rem; display: none; }
+        .char-count { color: #6c757d; font-size: 0.8rem; text-align: right; margin-top: 0.25rem; }
+        .warning { color: #ff6b35; }
+        .loading { display: none; text-align: center; margin-top: 1rem; }
         footer { background: #1e3799; color: white; padding: 2rem 1rem; margin-top: 3rem; }
         .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
         .footer-container p { margin-bottom: 0.5rem; font-size: 0.95rem; }
@@ -68,40 +73,47 @@
             </div>
             
             <!-- Form -->
-            <form id="paperForm" method="POST" action="https://formsubmit.co/ba7678fa86f2724e65ee512ab13e57d9" enctype="multipart/form-data">
+            <form id="paperForm" method="POST" action="https://formsubmit.co/ba7678fa86f2724e65ee512ab13e57d9" enctype="multipart/form-data" accept-charset="UTF-8">
                 <!-- Hidden fields -->
                 <input type="hidden" name="_subject" value="New Paper Submission">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://prinddi.github.io/thank-you.html">
+                <input type="hidden" name="_charset_" value="UTF-8">
                 
                 <!-- Name -->
                 <div class="form-group">
                     <label>Your Name <span class="required">*</span></label>
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" required maxlength="200">
+                    <div class="char-count" id="name-count">0/200</div>
                 </div>
                 
                 <!-- Email -->
                 <div class="form-group">
                     <label>Email <span class="required">*</span></label>
-                    <input type="email" name="email" required>
+                    <input type="email" name="email" required maxlength="100">
                 </div>
                 
                 <!-- Institution -->
                 <div class="form-group">
                     <label>Institution <span class="required">*</span></label>
-                    <input type="text" name="institution" required>
+                    <input type="text" name="institution" required maxlength="300">
+                    <div class="char-count" id="institution-count">0/300</div>
                 </div>
                 
                 <!-- Paper Title -->
                 <div class="form-group">
                     <label>Paper Title <span class="required">*</span></label>
-                    <input type="text" name="paper_title" id="paper_title" required>
+                    <input type="text" name="paper_title" id="paper_title" required maxlength="500">
+                    <div class="char-count" id="title-count">0/500</div>
+                    <div class="error-msg" id="title-error">Il titolo contiene caratteri che potrebbero causare problemi di invio</div>
                 </div>
                 
                 <!-- Co-authors -->
                 <div class="form-group">
                     <label>Co-authors (if any)</label>
-                    <input type="text" name="coauthors" placeholder="Name (Institution), Name (Institution)">
+                    <textarea name="coauthors" placeholder="Name (Institution), Name (Institution)" maxlength="1000" rows="3"></textarea>
+                    <div class="char-count" id="coauthors-count">0/1000</div>
+                    <div class="error-msg" id="coauthors-error">Il testo contiene caratteri che potrebbero causare problemi di invio</div>
                 </div>
                 
                 <!-- Submission Type -->
@@ -123,24 +135,172 @@
                         </label>
                         <input type="file" id="file" name="attachment" accept=".pdf" required onchange="updateFileName(this)">
                     </div>
+                    <div class="error-msg" id="file-error">File troppo grande (max 5MB) o nome file con caratteri speciali</div>
                 </div>
                 
                 <!-- Submit -->
-                <button type="submit" class="submit-btn">Submit Paper</button>
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Paper</button>
+                <div class="loading" id="loading">
+                    <p>Invio in corso... Questo potrebbe richiedere fino a 60 secondi.</p>
+                </div>
             </form>
         </div>
     </div>
 
     <script>
-        function updateFileName(input) {
-            const fileName = input.files[0]?.name || '📁 Click to select PDF file';
-            document.getElementById('fileName').textContent = fileName;
+        // Caratteri problematici comuni
+        const problematicChars = /[""''—…€£¥§©®™°±×÷≤≥≠∞∑∫√π]/;
+        
+        // Funzione per sanificare il testo
+        function sanitizeText(text) {
+            return text
+                .replace(/[""]/g, '"')
+                .replace(/['']/g, "'")
+                .replace(/—/g, '-')
+                .replace(/…/g, '...')
+                .replace(/€/g, 'EUR')
+                .replace(/£/g, 'GBP')
+                .replace(/¥/g, 'YEN')
+                .replace(/[©®™]/g, '')
+                .replace(/°/g, ' degrees')
+                .replace(/±/g, '+/-')
+                .replace(/×/g, 'x')
+                .replace(/÷/g, '/')
+                .replace(/≤/g, '<=')
+                .replace(/≥/g, '>=')
+                .replace(/≠/g, '!=')
+                .replace(/∞/g, 'infinity')
+                .replace(/∑/g, 'sum')
+                .replace(/∫/g, 'integral')
+                .replace(/√/g, 'sqrt')
+                .replace(/π/g, 'pi');
         }
 
-        // Aggiorna l'oggetto dell'email con il titolo del paper
-        document.getElementById('paperForm').addEventListener('submit', function() {
-            const title = document.getElementById('paper_title').value.trim();
-            this.querySelector('input[name="_subject"]').value = `New Paper Submission - ${title}`;
+        // Funzione per aggiornare contatore caratteri
+        function updateCharCount(input, counterId, maxLength) {
+            const current = input.value.length;
+            const counter = document.getElementById(counterId);
+            if (counter) {
+                counter.textContent = `${current}/${maxLength}`;
+                counter.className = current > maxLength * 0.9 ? 'char-count warning' : 'char-count';
+            }
+        }
+
+        // Funzione per validare caratteri
+        function validateChars(input, errorId) {
+            const errorDiv = document.getElementById(errorId);
+            if (problematicChars.test(input.value)) {
+                errorDiv.style.display = 'block';
+                return false;
+            } else {
+                errorDiv.style.display = 'none';
+                return true;
+            }
+        }
+
+        // Funzione per aggiornare nome file
+        function updateFileName(input) {
+            const file = input.files[0];
+            const fileNameSpan = document.getElementById('fileName');
+            const errorDiv = document.getElementById('file-error');
+            
+            if (file) {
+                // Verifica dimensione file (5MB = 5 * 1024 * 1024 bytes)
+                if (file.size > 5 * 1024 * 1024) {
+                    errorDiv.textContent = 'File troppo grande (max 5MB)';
+                    errorDiv.style.display = 'block';
+                    input.value = '';
+                    fileNameSpan.textContent = '📁 Click to select PDF file';
+                    return;
+                }
+                
+                // Verifica nome file per caratteri speciali
+                if (problematicChars.test(file.name)) {
+                    errorDiv.textContent = 'Nome file contiene caratteri speciali che potrebbero causare problemi';
+                    errorDiv.style.display = 'block';
+                } else {
+                    errorDiv.style.display = 'none';
+                }
+                
+                fileNameSpan.textContent = file.name;
+            } else {
+                fileNameSpan.textContent = '📁 Click to select PDF file';
+                errorDiv.style.display = 'none';
+            }
+        }
+
+        // Event listeners per validazione in tempo reale
+        document.addEventListener('DOMContentLoaded', function() {
+            const nameInput = document.querySelector('input[name="name"]');
+            const institutionInput = document.querySelector('input[name="institution"]');
+            const titleInput = document.getElementById('paper_title');
+            const coauthorsInput = document.querySelector('textarea[name="coauthors"]');
+            
+            if (nameInput) {
+                nameInput.addEventListener('input', function() {
+                    updateCharCount(this, 'name-count', 200);
+                });
+            }
+            
+            if (institutionInput) {
+                institutionInput.addEventListener('input', function() {
+                    updateCharCount(this, 'institution-count', 300);
+                });
+            }
+            
+            if (titleInput) {
+                titleInput.addEventListener('input', function() {
+                    updateCharCount(this, 'title-count', 500);
+                    validateChars(this, 'title-error');
+                });
+            }
+            
+            if (coauthorsInput) {
+                coauthorsInput.addEventListener('input', function() {
+                    updateCharCount(this, 'coauthors-count', 1000);
+                    validateChars(this, 'coauthors-error');
+                });
+            }
+        });
+
+        // Gestione invio form
+        document.getElementById('paperForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const titleInput = document.getElementById('paper_title');
+            
+            // Aggiorna oggetto email
+            const title = titleInput.value.trim();
+            this.querySelector('input[name="_subject"]').value = `New Paper Submission - ${sanitizeText(title)}`;
+            
+            // Sanifica tutti i campi di testo prima dell'invio
+            const textInputs = this.querySelectorAll('input[type="text"], textarea');
+            textInputs.forEach(input => {
+                if (input.value) {
+                    input.value = sanitizeText(input.value);
+                }
+            });
+            
+            // Mostra loading e disabilita bottone
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Invio in corso...';
+            loading.style.display = 'block';
+            
+            // Timeout per gestire invii lenti
+            const timeout = setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Paper';
+                loading.style.display = 'none';
+                alert('L\'invio sta impiegando più tempo del previsto. Riprova o contatta ddivenice@gmail.com');
+            }, 60000);
+            
+            // Invia il form
+            this.submit();
+            
+            // Pulisci timeout se l'invio è completato rapidamente
+            clearTimeout(timeout);
         });
     </script>
 
