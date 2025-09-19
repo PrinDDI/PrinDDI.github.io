@@ -30,6 +30,51 @@
         <!-- Events Grid -->
         <div class="events-grid">
             
+            <div class="event-card call-for-papers">
+    <div class="event-header-extended">
+        <div class="event-date-badge-double">
+            <span class="day">29-30</span>
+            <span class="month">JAN</span>
+            <span class="year">2026</span>
+        </div>
+        <div class="cfp-badge">
+            <span>Call for Papers</span>
+            <span class="deadline">Deadline: Nov 15, 2025</span>
+        </div>
+    </div>
+    <div class="event-content-extended">
+        <h3>Data, Algorithms, and Innovation in Firms</h3>
+        <p class="event-subtitle">A Workshop on Digital Transformation, Data Driven Innovation and Firm Dynamics</p>
+        <p class="event-location"><strong>Location:</strong> Campus Economico S. Giobbe, Ca'Foscari University of Venice</p>
+        
+        <div class="cfp-details">
+            <p class="event-description">
+                Concluding workshop for the "Data Driven Innovation (DDI): Measuring its Effects on Industries, Firms, and Business Models" project. 
+                The workshop brings together scholars from economics, management, data science, and related disciplines to explore how data abundance—enabled by algorithms, AI, and digital transformation—is reshaping firms' strategy, organization, and performance.
+            </p>
+            
+            <div class="cfp-topics">
+                <h4>Key Topics:</h4>
+                <ul>
+                    <li>Data Driven Innovation & AI adoption</li>
+                    <li>Digital transformation measurement challenges</li>
+                    <li>Organizational change and workforce implications</li>
+                    <li>Sustainability and firm performance</li>
+                </ul>
+            </div>
+            
+            <div class="submission-info">
+                <p><strong>Submission:</strong> Full paper or extended abstract (800-1,500 words)</p>
+                <p><strong>Email:</strong> <a href="mailto:ddivenice@gmail.com">ddivenice@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="event-footer-extended">
+        <a href="/pdfs/Call for Papers DDI VENICE.pdf" class="btn-details">Full Details</a>
+        <a href="submission.html" class="btn-submit">Submit Paper</a>
+    </div>
+</div>
+  
 
             <!-- PRIN Meeting 2025 -->
             <div class="event-card">
@@ -348,5 +393,208 @@
             font-size: 2.5rem;
         }
     </style>
+
+    <style>
+/* Extended styles for Call for Papers card */
+.event-card.call-for-papers {
+    grid-column: span 2;
+    border-left: 4px solid #2c5aa0;
+    background: linear-gradient(to bottom, #fff 0%, #ffffff 100%);
+}
+
+.event-header-extended {
+    position: relative;
+    min-height: 80px;
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.event-date-badge-double {
+    background: linear-gradient(135deg,#2c5aa0  0%, #2c5aa0 100%);
+    color: white;
+    border-radius: 6px;
+    padding: 0.75rem;
+    text-align: center;
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.cfp-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
+
+.cfp-badge span:first-child {
+    background: #2c5aa0;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cfp-badge .deadline {
+    color: #7f8c8d;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.event-content-extended {
+    padding: 1.75rem;
+}
+
+.event-subtitle {
+    color: #34495e;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0.5rem 0 1rem 0;
+    line-height: 1.4;
+}
+
+.event-location {
+    font-size: 0.9rem;
+    color: #2c3e50;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+.cfp-details {
+    margin-top: 1.5rem;
+}
+
+.cfp-topics {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.cfp-topics h4 {
+    color: #2c5aa0;
+    margin: 0 0 0.75rem 0;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cfp-topics ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: none;
+}
+
+.cfp-topics li {
+    position: relative;
+    font-size: 0.9rem;
+    color: #5a6c7d;
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+}
+
+.cfp-topics li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #fffaf70d;
+}
+
+.submission-info {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 3px solid #f39d1208;
+    margin-top: 1rem;
+}
+
+.submission-info p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #34495e;
+}
+
+.submission-info a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.submission-info a:hover {
+    text-decoration: underline;
+}
+
+.event-footer-extended {
+    padding: 1rem 1.5rem;
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 100%);
+    border-top: 1px solid #ffffff;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.btn-details {
+    background: #2c5aa0;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+    background: #1e3d6f;
+}
+
+.btn-submit {
+    background: #2c5aa0;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #229954;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .event-card.call-for-papers {
+        grid-column: span 1;
+    }
+    
+    .event-header-extended {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .cfp-badge {
+        align-items: flex-start;
+    }
+    
+    .event-footer-extended {
+        flex-direction: column;
+    }
+    
+    .event-footer-extended a {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>
 </body>
 </html>
