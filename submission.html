@@ -1,5 +1,4 @@
-.char-count { color: #6c757d; font-size: 0.8rem; text-align: right; margin-top: 0.25rem; }
-        .warning { color: #ff6b35; }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,12 +34,13 @@
         .info-box { background: #e8f5e9; padding: 1rem; border-radius: 6px; margin-bottom: 2rem; border-left: 4px solid #4caf50; }
         .deadline { color: #e74c3c; font-weight: bold; }
         .error-msg { color: #e74c3c; font-size: 0.9rem; margin-top: 0.5rem; display: none; }
-        .success-msg { background: #d4edda; color: #155724; padding: 1rem; border-radius: 6px; margin-bottom: 1rem; display: none; border: 1px solid #c3e6cb; }
+        .char-count { color: #6c757d; font-size: 0.8rem; text-align: right; margin-top: 0.25rem; }
+        .warning { color: #ff6b35; }
         .loading { display: none; text-align: center; margin-top: 1rem; }
-        .spinner { border: 3px solid #f3f3f3; border-top: 3px solid #1e3799; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         footer { background: #1e3799; color: white; padding: 2rem 1rem; margin-top: 3rem; }
         .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .footer-container p { margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .footer-container .credits { margin-top: 1rem; font-size: 0.85rem; opacity: 0.85; }
     </style>
 </head>
 <body>
@@ -50,9 +50,9 @@
             <div class="logo">Research Group</div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                     <li><a href="index.html">Home</a></li>
                     <li><a href="publications.html">Research Contributions</a></li>
-                    <li><a href="people.html">People</a></li>
+                    <li><a href="people.html" class="active">People</a></li>
                     <li><a href="events.html">Events</a></li> 
                     <li><a href="#" style="color: #dfe6f1; font-weight: bold;">Submit</a></li>
                 </ul>
@@ -69,22 +69,22 @@
             <div class="info-box">
                 📅 <span class="deadline">Deadline: November 15, 2025</span><br>
                 📍 Venice, January 29-30, 2026<br>
-                📧 Contact: ddivenice@gmail.com
-            </div>
-
-            <!-- Success Message -->
-            <div id="successMessage" class="success-msg">
-                ✅ <strong>Submission Successful!</strong><br>
-                Your paper has been received. Check your email for confirmation.<br>
-                Submission ID: <span id="submissionIdDisplay"></span>
+                📧 Submissions to: ddivenice@gmail.com
             </div>
             
             <!-- Form -->
-            <form id="paperForm">
+            <form id="paperForm" method="POST" action="https://formsubmit.co/ba7678fa86f2724e65ee512ab13e57d9" enctype="multipart/form-data" accept-charset="UTF-8">
+                <!-- Hidden fields -->
+                <input type="hidden" name="_subject" value="New Paper Submission">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://prinddi.github.io/thank-you.html">
+                <input type="hidden" name="_charset_" value="UTF-8">
+                
                 <!-- Name -->
                 <div class="form-group">
                     <label>Your Name <span class="required">*</span></label>
                     <input type="text" name="name" required maxlength="200">
+                    <div class="char-count" id="name-count">0/200</div>
                 </div>
                 
                 <!-- Email -->
@@ -97,6 +97,7 @@
                 <div class="form-group">
                     <label>Institution <span class="required">*</span></label>
                     <input type="text" name="institution" required maxlength="300">
+                    <div class="char-count" id="institution-count">0/300</div>
                 </div>
                 
                 <!-- Paper Title -->
@@ -104,14 +105,15 @@
                     <label>Paper Title <span class="required">*</span></label>
                     <input type="text" name="paper_title" id="paper_title" required maxlength="500">
                     <div class="char-count" id="title-count">0/500</div>
-                    <div class="error-msg" id="title-error">Title contains special characters that may cause submission issues</div>
+                    <div class="error-msg" id="title-error">Il titolo contiene caratteri che potrebbero causare problemi di invio</div>
                 </div>
                 
                 <!-- Co-authors -->
                 <div class="form-group">
                     <label>Co-authors (if any)</label>
                     <textarea name="coauthors" placeholder="Name (Institution), Name (Institution)" maxlength="1000" rows="3"></textarea>
-                    <div class="error-msg" id="coauthors-error">Text contains special characters that may cause submission issues</div>
+                    <div class="char-count" id="coauthors-count">0/1000</div>
+                    <div class="error-msg" id="coauthors-error">Il testo contiene caratteri che potrebbero causare problemi di invio</div>
                 </div>
                 
                 <!-- Submission Type -->
@@ -129,30 +131,23 @@
                     <label>Upload PDF <span class="required">*</span></label>
                     <div class="file-upload">
                         <label for="file" class="file-label">
-                            <span id="fileName">📁 Click to select PDF file (max 5MB)</span>
+                            <span id="fileName">📁 Click to select PDF file</span>
                         </label>
                         <input type="file" id="file" name="attachment" accept=".pdf" required onchange="updateFileName(this)">
                     </div>
-                    <div class="error-msg" id="file-error"></div>
+                    <div class="error-msg" id="file-error">File troppo grande (max 5MB) o nome file con caratteri speciali</div>
                 </div>
-
-                <!-- General Error Message -->
-                <div class="error-msg" id="general-error"></div>
                 
                 <!-- Submit -->
                 <button type="submit" class="submit-btn" id="submitBtn">Submit Paper</button>
                 <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>Processing submission...</p>
+                    <p>Invio in corso... Questo potrebbe richiedere fino a 60 secondi.</p>
                 </div>
             </form>
         </div>
     </div>
 
     <script>
-        // Configuration
-        const SERVER_URL = 'http://localhost:3000'; // Change this to your server URL
-        
         // Caratteri problematici comuni
         const problematicChars = /[""''—…€£¥§©®™°±×÷≤≥≠∞∑∫√π]/;
         
@@ -180,7 +175,7 @@
                 .replace(/√/g, 'sqrt')
                 .replace(/π/g, 'pi');
         }
-        
+
         // Funzione per aggiornare contatore caratteri
         function updateCharCount(input, counterId, maxLength) {
             const current = input.value.length;
@@ -202,87 +197,37 @@
                 return true;
             }
         }
-        
+
+        // Funzione per aggiornare nome file
         function updateFileName(input) {
             const file = input.files[0];
             const fileNameSpan = document.getElementById('fileName');
             const errorDiv = document.getElementById('file-error');
             
             if (file) {
+                // Verifica dimensione file (5MB = 5 * 1024 * 1024 bytes)
                 if (file.size > 5 * 1024 * 1024) {
-                    errorDiv.textContent = 'File too large (max 5MB)';
+                    errorDiv.textContent = 'File troppo grande (max 5MB)';
                     errorDiv.style.display = 'block';
                     input.value = '';
-                    fileNameSpan.textContent = '📁 Click to select PDF file (max 5MB)';
+                    fileNameSpan.textContent = '📁 Click to select PDF file';
                     return;
                 }
                 
-                errorDiv.style.display = 'none';
-                fileNameSpan.textContent = `📄 ${file.name}`;
+                // Verifica nome file per caratteri speciali
+                if (problematicChars.test(file.name)) {
+                    errorDiv.textContent = 'Nome file contiene caratteri speciali che potrebbero causare problemi';
+                    errorDiv.style.display = 'block';
+                } else {
+                    errorDiv.style.display = 'none';
+                }
+                
+                fileNameSpan.textContent = file.name;
             } else {
-                fileNameSpan.textContent = '📁 Click to select PDF file (max 5MB)';
+                fileNameSpan.textContent = '📁 Click to select PDF file';
                 errorDiv.style.display = 'none';
             }
         }
-
-        // Handle form submission
-        document.getElementById('paperForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const loading = document.getElementById('loading');
-            const errorMsg = document.getElementById('general-error');
-            const successMsg = document.getElementById('successMessage');
-            
-            // Reset messages
-            errorMsg.style.display = 'none';
-            successMsg.style.display = 'none';
-            
-            // Show loading
-            submitBtn.disabled = true;
-            loading.style.display = 'block';
-            
-            // Sanitize all text fields before submission
-            const textInputs = this.querySelectorAll('input[type="text"], textarea');
-            textInputs.forEach(input => {
-                if (input.value) {
-                    input.value = sanitizeText(input.value);
-                }
-            });
-            
-            // Prepare form data
-            const formData = new FormData(this);
-            
-            try {
-                const response = await fetch(`${SERVER_URL}/submit-paper`, {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok && result.success) {
-                    // Show success message
-                    document.getElementById('submissionIdDisplay').textContent = result.submissionId;
-                    successMsg.style.display = 'block';
-                    
-                    // Reset form
-                    this.reset();
-                    document.getElementById('fileName').textContent = '📁 Click to select PDF file (max 5MB)';
-                    
-                    // Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                    throw new Error(result.error || 'Submission failed');
-                }
-            } catch (error) {
-                errorMsg.textContent = error.message || 'Failed to submit. Please try again or email directly to ddivenice@gmail.com';
-                errorMsg.style.display = 'block';
-            } finally {
-                submitBtn.disabled = false;
-                loading.style.display = 'none';
-            }
-        });
 
         // Event listeners per validazione in tempo reale
         document.addEventListener('DOMContentLoaded', function() {
@@ -290,6 +235,18 @@
             const institutionInput = document.querySelector('input[name="institution"]');
             const titleInput = document.getElementById('paper_title');
             const coauthorsInput = document.querySelector('textarea[name="coauthors"]');
+            
+            if (nameInput) {
+                nameInput.addEventListener('input', function() {
+                    updateCharCount(this, 'name-count', 200);
+                });
+            }
+            
+            if (institutionInput) {
+                institutionInput.addEventListener('input', function() {
+                    updateCharCount(this, 'institution-count', 300);
+                });
+            }
             
             if (titleInput) {
                 titleInput.addEventListener('input', function() {
@@ -300,18 +257,72 @@
             
             if (coauthorsInput) {
                 coauthorsInput.addEventListener('input', function() {
+                    updateCharCount(this, 'coauthors-count', 1000);
                     validateChars(this, 'coauthors-error');
                 });
             }
         });
+
+        // Gestione invio form
+        document.getElementById('paperForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const titleInput = document.getElementById('paper_title');
+            
+            // Aggiorna oggetto email
+            const title = titleInput.value.trim();
+            this.querySelector('input[name="_subject"]').value = `New Paper Submission - ${sanitizeText(title)}`;
+            
+            // Sanifica tutti i campi di testo prima dell'invio
+            const textInputs = this.querySelectorAll('input[type="text"], textarea');
+            textInputs.forEach(input => {
+                if (input.value) {
+                    input.value = sanitizeText(input.value);
+                }
+            });
+            
+            // Mostra loading e disabilita bottone
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Invio in corso...';
+            loading.style.display = 'block';
+            
+            // Timeout per gestire invii lenti
+            const timeout = setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Paper';
+                loading.style.display = 'none';
+                alert('L\'invio sta impiegando più tempo del previsto. Riprova o contatta ddivenice@gmail.com');
+            }, 60000);
+            
+            // Invia il form
+            this.submit();
+            
+            // Pulisci timeout se l'invio è completato rapidamente
+            clearTimeout(timeout);
+        });
     </script>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2025 All rights reserved.</p>
-            <p>Data Driven Innovation Research Projects</p>
+    <footer class="academic-footer" style="background-color: #2c3e50; color: #ffffff; padding: 40px 0;">
+        <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="footer-logo-section" style="text-align: center; margin-bottom: 30px;">
+                <img src="pic/intestazione.png" alt="Funding Organizations" class="funding-logos" style="width: 100%; max-width: 1900px; height: auto;">
+            </div>
+            <div class="footer-info-section" style="text-align: center;">
+                <p class="copyright" style="margin-bottom: 20px; font-size: 14px; color: #ecf0f1;">&copy; 2025 All rights reserved.</p>
+                <div class="funding-info" style="font-size: 13px; line-height: 1.8; color: #bdc3c7; max-width: 800px; margin: 0 auto;">
+                    <p style="margin-bottom: 15px;"><strong style="color: #ecf0f1; font-size: 15px;">Research Projects</strong></p>
+                    <p style="margin-bottom: 10px;">• "Data Driven Innovation. Measuring its Effects on Industries, Firms and Business Models"<br><span style="display: block; margin-left: 20px; margin-top: 5px;">Prot. 2022JHZL37CUP - CUP H53D23002450006</span></p>
+                    <p style="margin-bottom: 20px;">• "Managing sustainability tensions for change"<br><span style="display: block; margin-left: 20px; margin-top: 5px;">Prot. 20222X8L5C - CUP H53D23002120006</span></p>
+                    <div style="border-top: 1px solid #34495e; padding-top: 20px; margin-top: 20px;">
+                        <p style="margin: 0;">Finanziati dall'Unione Europea – Next Generation EU<br>PNRR – Missione 4 Componente 2, Investimento 1.1<br>Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN)</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
 </body>
 </html>
