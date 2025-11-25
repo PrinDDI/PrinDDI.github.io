@@ -2,191 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Research Group Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrinDDI - Data Driven Innovation Research</title>
+    <meta name="description" content="Research project on Data Driven Innovation measuring its effects on Industries, Firms, and Business Models.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for elegant typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Temporary inline styles for expandable sections */
-        .project-section {
-            margin: 40px auto;
-            max-width: 1200px;
-            padding: 0 20px;
-        }
-        
-        .expandable {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .expandable-header {
-            padding: 20px 30px;
-            cursor: pointer;
-            background-color: #3498db;
-            color: white;
-            font-size: 1.3em;
-            font-weight: 500;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-        
-        .expandable-header:hover {
-            background-color: #2980b9;
-        }
-        
-        .expandable-header::after {
-            content: '+';
-            font-size: 1.5em;
-            font-weight: 300;
-            transition: transform 0.3s ease;
-            
-        }
-        
-        .expandable.active .expandable-header::after {
-            transform: rotate(45deg);
-        }
-        
-        .expandable-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 30px;
-        }
-        
-        .expandable.active .expandable-content {
-            max-height: 500px;
-            padding: 20px 30px 30px;
-        }
-        
-        .subsection h3 {
-            color: #2c3e50;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        .subsection ul li { text-align: justify; }
-        
-        .hero .project-acronym {
-            font-size: 1.8em;
-            font-weight: 300;
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <div class="navbar">
-            <div class="logo">Research Group</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="publications.html">Research Contributions</a></li>
-                    <li><a href="people.html">People</a></li>
-                    <li><a href="events.html">Events</a></li> 
-                    <li><a href="submission.html"> Workshop Submission</a></li>
-                </ul>
-            </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">PrinDDI</div>
+        <div class="menu-toggle">☰</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="publications.html">Research</a>
+            <a href="people.html">People</a>
+            <a href="events.html">Events</a>
+            <a href="submission.html">Submission</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content reveal">
+            <p class="project-acronym">PrinDDI</p>
+            <h1>Data Driven Innovation</h1>
+            <p>Measuring its Effects on Industries, Firms, and Business Models</p>
+            <a href="#about" class="btn">Discover More</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Data Driven Innovation
+    <!-- Main Content -->
+    <main>
+        <!-- About Project Section -->
+        <section id="about" class="container">
+            <h2 class="section-title reveal">About the Research</h2>
+            
+            <div class="expandable-grid reveal">
+                <!-- Project Details -->
+                <details class="expandable" open>
+                    <summary class="expandable-header">The Project Overview</summary>
+                    <div class="expandable-content">
+                        <div class="subsection">
+                            <h3>Objectives</h3>
+                            <ul>
+                                <li>
+                                    <strong>Identifying DDIs with empirical data:</strong> The definition of DDI as introduced by OECD is a broad and flexible one, but it is not straightforward to translate it into empirical proxies. We systematically discuss various possible definitions of DDI and make an unprecedented effort to search, select, collect, and process evidence on this phenomenon.
+                                </li>
+                                <li>
+                                    <strong>Assessing uneven impact:</strong> Drawing from the indicators and the empirical mapping developed in Objective 1, we aim to relate the present state of diffusion of DDI to the development of sectors and firms. Analyses of cross-sectoral differences will provide insights into how DDIs affect all levels of the economy.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
 
-</h1>
-            <p class="project-acronym">DDI</p>
-            <p>Measuring its Effects on Industries, Firms, and Business Models</p>
-            <a href="publications.html" class="btn">Explore Publications</a>
-        </div>
-    </section>
-
-    <!-- Project Section -->
-    <section class="project-section">
-        <h2 style="text-align: center; margin-bottom: 40px; font-size: 2em; color: #2c3e50;">About the Research</h2>
-        
-        <!-- The Project Expandable -->
-        <div class="expandable" id="project-expandable">
-            <div class="expandable-header" onclick="toggleExpandable('project-expandable')">
-                The Project
+                <!-- Team Teaser -->
+                <details class="expandable">
+                    <summary class="expandable-header">Our Team</summary>
+                    <div class="expandable-content">
+                        <p>Our research team consists of experienced academics and researchers from various institutions, working together to achieve the project objectives.</p>
+                        <div style="margin-top: 20px;">
+                            <a href="people.html" class="btn">Meet the Team</a>
+                        </div>
+                    </div>
+                </details>
             </div>
-            <div class="expandable-content">
-                <div class="subsection">
-                    <h3>Objectives</h3>
-                    <ul>
-                        <li>1. Identifying DDIs with empirical data at different levels and with different methodological tools
-The definition of DDI as introduced by OECD is a broad and flexible one, but it is not straightforward to translate it into empirical proxies. Thus, we systematically discuss various possible definitions of DDI and make an unprecedented effort to search, select, collect, and process evidence on this phenomenon. Since DDI reveals its effect at different levels of aggregation, we undertake this exercise by looking at the structural composition of the economy, at the level of single sectors, and at the firm level. We expect thus to provide a wide range of novel measures and indicators of DDI types and diffusion, in turn allowing to map DDI across sectors and countries, well beyond the picture delivered by prior isolated studies.
-
-
-</li>
-                        <li>2. Assessing the uneven impact of DDI at the level of economy, sectors, and firms.
-Drawing from the indicators and the empirical mapping developed in Objective 1, we then aim to relate the present state of diffusion of DDI to the development of sectors and firms. Although DDI has the potential to be pervasive across industries, the pace of diffusion is likely to be uneven and its full realization depends on the specific characteristics of each industry such as the technological knowledge of the sectors, as well as the availability and recombination of skills and competence of the workforce. Analyses of cross-sectoral differences, rather than a uni-sectoral analysis, will provide insights into how DDIs affect all the levels we identified above. At the same time, within industries, the different degree of involvement and the heterogeneity in the ability of firms to master DDI-related changes, is likely to produce uneven outcomes in terms of key dimensions of firm performance, such as firm growth, survival, and innovativeness. </li>
-                    </ul>
-                </div>
-                
-            </div>
-        </div>
-        
-        <!-- The Team Expandable -->
-        <div class="expandable" id="team-expandable">
-            <div class="expandable-header" onclick="toggleExpandable('team-expandable')">
-                The Team
-            </div>
-            <div class="expandable-content">
-                <p>Our research team consists of experienced academics and researchers from various institutions, working together to achieve the project objectives.</p>
-                <div style="text-align: center; margin-top: 20px;">
-                    <a href="people.html" class="btn" style="display: inline-block; padding: 10px 30px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">View Team Profiles</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="academic-footer" style="background-color: #2c3e50; color: #ffffff; padding: 40px 0;">
-        <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <!-- Logo Section - Full Width -->
-            <div class="footer-logo-section" style="text-align: center; margin-bottom: 30px;">
-                <img src="pic/intestazione.png" alt="Funding Organizations" class="funding-logos" style="width: 100%; max-width: 1900px; height: auto;">
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo-section">
+                <!-- Note: Ensure this image path is correct relative to the new structure if changed, otherwise keep as is -->
+                <img src="pic/intestazione.png" alt="Funding Organizations" class="funding-logos" style="filter: brightness(0) invert(1);">
             </div>
             
-            <!-- Info Section -->
-            <div class="footer-info-section" style="text-align: center;">
-                <p class="copyright" style="margin-bottom: 20px; font-size: 14px; color: #ecf0f1;">&copy; 2025 All rights reserved.</p>
-                <div class="funding-info" style="font-size: 13px; line-height: 1.8; color: #bdc3c7; max-width: 800px; margin: 0 auto;">
-                    <p style="margin-bottom: 15px;">
-                        <strong style="color: #ecf0f1; font-size: 15px;">Research Projects</strong>
-                    </p>
-                    <p style="margin-bottom: 10px;">
-                        • "Data Driven Innovation. Measuring its Effects on Industries, Firms and Business Models"<br>
-                        <span style="display: block; margin-left: 20px; margin-top: 5px;">Prot. 2022JHZL37CUP - CUP H53D23002450006</span>
-                    </p>
-                    <p style="margin-bottom: 20px;">
-                        • "Managing sustainability tensions for change"<br>
-                        <span style="display: block; margin-left: 20px; margin-top: 5px;">Prot. 20222X8L5C - CUP H53D23002120006</span>
-                    </p>
-                    <div style="border-top: 1px solid #34495e; padding-top: 20px; margin-top: 20px;">
-                        <p style="margin: 0;">
-                            Finanziati dall'Unione Europea – Next Generation EU<br>
-                            PNRR – Missione 4 Componente 2, Investimento 1.1<br>
-                            Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN)
-                        </p>
-                    </div>
+            <div class="footer-info">
+                <p><strong>Research Project:</strong> "Data Driven Innovation. Measuring its Effects on Industries, Firms and Business Models"</p>
+                <p>Prot. 2022JHZL37CUP - CUP H53D23002450006</p>
+                <p><strong>Related Project:</strong> "Managing sustainability tensions for change"</p>
+                <p>Prot. 20222X8L5C - CUP H53D23002120006</p>
+                
+                <div style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7;">
+                    <p>Finanziati dall'Unione Europea – Next Generation EU</p>
+                    <p>PNRR – Missione 4 Componente 2, Investimento 1.1</p>
+                    <p>Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN)</p>
                 </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 PrinDDI Research Group. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for expandable sections -->
-    <script>
-        function toggleExpandable(id) {
-            const element = document.getElementById(id);
-            element.classList.toggle('active');
-        }
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>

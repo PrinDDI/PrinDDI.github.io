@@ -1,87 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Publications - Research Group</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Contributions - PrinDDI Research Group</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <div class="navbar">
-            <div class="logo">Research Group</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="publications.html" class="active">Research Contributions</a></li>
-                    <li><a href="people.html">People</a></li>
-                    <li><a href="events.html">Events</a></li> 
-                    <li><a href="submission.html"> Workshop Submission</a></li>
-
-                </ul>
-            </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">PrinDDI</div>
+        <div class="menu-toggle">☰</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="publications.html" class="active">Research</a>
+            <a href="people.html">People</a>
+            <a href="events.html">Events</a>
+            <a href="submission.html">Submission</a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Publications Section -->
-    <section class="publications">
-        <h1>Research Contributions</h1>
-        <div class="publications-list">
-            <!-- Publication 1 -->
-            <div class="publication-item">
-                <h3>Scraping innovativeness from corporate websites: Empirical evidence on Italian manufacturing SMEs</h3>
-                <p>Authors: Carlo Bottai, Lisa Crosato, Josep Domenech, Marco Guerzoni and Caterina Liberati</p>
-                <p>Abstract: Research in innovation studies usually relies on financial statements, surveys, or patents as primary data
-sources, although these sources of information show some limitations when applied to Small and Medium
-Enterprises (SMEs). Our paper explores whether the HTML code of a company’s website is a further source to
-better inform innovation policies, under the assumption that how HTML is employed in crafting a corporate
-website provides insights into the company’s innovation capabilities. In particular, we leverage HTML tags and
-their associations to empirically show that the websites of innovative SMEs are different from non-innovative
-ones both in terms of their size and coding practices. Our findings, based on a sample of Italian companies,
-indicate that the features of the HTML code of corporate websites reflect unobservable characteristics related
-to the skills and creativity present in businesses.</p>
-                <a href="pdfs/Bottai2024.pdf" class="btn" target="_blank" rel="noopener noreferrer">Read PDF</a>
-            </div>
-            <!-- Publication 2 -->
-           
-    </section>
+    <!-- Main Content -->
+    <main style="padding-top: var(--header-height);">
+        <section class="container">
+            <h1 class="section-title reveal">Research Contributions</h1>
 
-     <!-- Footer -->
-     <footer class="academic-footer" style="background-color: #2c3e50; color: #ffffff; padding: 40px 0;">
-        <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <!-- Logo Section - Full Width -->
-            <div class="footer-logo-section" style="text-align: center; margin-bottom: 30px;">
-                <img src="pic/intestazione.png" alt="Funding Organizations" class="funding-logos" style="width: 100%; max-width: 1900px; height: auto;">
-            </div>
-            
-            <!-- Info Section -->
-            <div class="footer-info-section" style="text-align: center;">
-                <p class="copyright" style="margin-bottom: 20px; font-size: 14px; color: #ecf0f1;">&copy; 2025 All rights reserved.</p>
-                <div class="funding-info" style="font-size: 13px; line-height: 1.8; color: #bdc3c7; max-width: 800px; margin: 0 auto;">
-                    <p style="margin-bottom: 15px;">
-                        <strong style="color: #ecf0f1; font-size: 15px;">Research Projects</strong>
-                    </p>
-                    <p style="margin-bottom: 10px;">
-                        • "Data Driven Innovation. Measuring its Effects on Industries, Firms and Business Models"<br>
-                        <span style="display: block; margin-left: 20px; margin-top: 5px;">Prot. 2022JHZL37CUP - CUP H53D23002450006</span>
-                    </p>
-                    <p style="margin-bottom: 20px;">
-                        • "Managing sustainability tensions for change"<br>
-                        <span style="display: block; margin-left: 20px; margin-top: 5px;">Prot. 20222X8L5C - CUP H53D23002120006</span>
-                    </p>
-                    <div style="border-top: 1px solid #34495e; padding-top: 20px; margin-top: 20px;">
-                        <p style="margin: 0;">
-                            Finanziati dall'Unione Europea – Next Generation EU<br>
-                            PNRR – Missione 4 Componente 2, Investimento 1.1<br>
-                            Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN)
-                        </p>
+            <div class="card-grid reveal">
+
+                <!-- Publication 1 -->
+                <div class="card" style="grid-column: 1 / -1;">
+                    <h3 style="font-size: 1.5rem; color: var(--primary-color);">Scraping innovativeness from corporate
+                        websites: Empirical evidence on Italian manufacturing SMEs</h3>
+                    <p style="font-weight: 600; color: var(--accent-color);">Authors: Carlo Bottai, Lisa Crosato, Josep
+                        Domenech, Marco Guerzoni and Caterina Liberati</p>
+                    <div style="background: #f1f5f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <p style="font-style: italic; margin-bottom: 10px;"><strong>Abstract:</strong></p>
+                        <p style="margin-bottom: 0;">Research in innovation studies usually relies on financial
+                            statements, surveys, or patents as primary data sources, although these sources of
+                            information show some limitations when applied to Small and Medium Enterprises (SMEs). Our
+                            paper explores whether the HTML code of a company’s website is a further source to better
+                            inform innovation policies, under the assumption that how HTML is employed in crafting a
+                            corporate website provides insights into the company’s innovation capabilities. In
+                            particular, we leverage HTML tags and their associations to empirically show that the
+                            websites of innovative SMEs are different from non-innovative ones both in terms of their
+                            size and coding practices. Our findings, based on a sample of Italian companies, indicate
+                            that the features of the HTML code of corporate websites reflect unobservable
+                            characteristics related to the skills and creativity present in businesses.</p>
                     </div>
+                    <a href="pdfs/Bottai2024.pdf" class="btn" target="_blank" rel="noopener noreferrer">Read PDF</a>
                 </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo-section">
+                <img src="pic/intestazione.png" alt="Funding Organizations" class="funding-logos"
+                    style="filter: brightness(0) invert(1);">
+            </div>
+
+            <div class="footer-info">
+                <p><strong>Research Project:</strong> "Data Driven Innovation. Measuring its Effects on Industries,
+                    Firms and Business Models"</p>
+                <p>Prot. 2022JHZL37CUP - CUP H53D23002450006</p>
+                <p><strong>Related Project:</strong> "Managing sustainability tensions for change"</p>
+                <p>Prot. 20222X8L5C - CUP H53D23002120006</p>
+
+                <div style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7;">
+                    <p>Finanziati dall'Unione Europea – Next Generation EU</p>
+                    <p>PNRR – Missione 4 Componente 2, Investimento 1.1</p>
+                    <p>Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN)
+                    </p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2025 PrinDDI Research Group. All rights reserved.
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
+
 </html>
