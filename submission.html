@@ -270,195 +270,181 @@
                 </form>
             </div>
         </section>
-    </main>
+        <p><strong>Related Project:</strong> "Managing sustainability tensions for change"</p>
+        <p>Prot. 20222X8L5C - CUP H53D23002120006</p>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-logo-section">
-                <img src="pic/intestazione.png" alt="Funding Organizations" class="funding-logos"
-                    style="filter: brightness(0) invert(1);">
-            </div>
-
-            <div class="footer-info">
-                <p><strong>Research Project:</strong> "Data Driven Innovation. Measuring its Effects on Industries,
-                    Firms and Business Models"</p>
-                <p>Prot. 2022JHZL37CUP - CUP H53D23002450006</p>
-                <p><strong>Related Project:</strong> "Managing sustainability tensions for change"</p>
-                <p>Prot. 20222X8L5C - CUP H53D23002120006</p>
-
-                <div style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7;">
-                    <p>Finanziati dall'Unione Europea – Next Generation EU</p>
-                    <p>PNRR – Missione 4 Componente 2, Investimento 1.1</p>
-                    <p>Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN)
-                    </p>
-                </div>
-            </div>
-
-            <div class="copyright">
-                &copy; 2025 PrinDDI Research Group. All rights reserved.
-            </div>
+        <div style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7;">
+            <p>Finanziati dall'Unione Europea – Next Generation EU</p>
+            <p>PNRR – Missione 4 Componente 2, Investimento 1.1</p>
+            <p>Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN)
+            </p>
         </div>
-    </footer>
+        </div>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
-    <script>
-        // Caratteri problematici comuni
-        const problematicChars = /[""''—…€£¥§©®™°±×÷≤≥≠∞∑∫√π]/;
+        <div class="copyright">
+            &copy; 2025 PrinDDI Research Group. All rights reserved.
+        </div>
+        </div>
+        </footer>
 
-        // Funzione per sanificare il testo
-        function sanitizeText(text) {
-            return text
-                .replace(/[""]/g, '"')
-                .replace(/['']/g, "'")
-                .replace(/—/g, '-')
-                .replace(/…/g, '...')
-                .replace(/€/g, 'EUR')
-                .replace(/£/g, 'GBP')
-                .replace(/¥/g, 'YEN')
-                .replace(/[©®™]/g, '')
-                .replace(/°/g, ' degrees')
-                .replace(/±/g, '+/-')
-                .replace(/×/g, 'x')
-                .replace(/÷/g, '/')
-                .replace(/≤/g, '<=')
-                .replace(/≥/g, '>=')
-                .replace(/≠/g, '!=')
-                .replace(/∞/g, 'infinity')
-                .replace(/∑/g, 'sum')
-                .replace(/∫/g, 'integral')
-                .replace(/√/g, 'sqrt')
-                .replace(/π/g, 'pi');
-        }
+        <!-- Scripts -->
+        <script src="script.js"></script>
+        <script>
+            // Caratteri problematici comuni
+            const problematicChars = /[""''—…€£¥§©®™°±×÷≤≥≠∞∑∫√π]/;
 
-        // Funzione per aggiornare contatore caratteri
-        function updateCharCount(input, counterId, maxLength) {
-            const current = input.value.length;
-            const counter = document.getElementById(counterId);
-            if (counter) {
-                counter.textContent = `${current}/${maxLength}`;
-                counter.className = current > maxLength * 0.9 ? 'char-count warning' : 'char-count';
+            // Funzione per sanificare il testo
+            function sanitizeText(text) {
+                return text
+                    .replace(/[""]/g, '"')
+                    .replace(/['']/g, "'")
+                    .replace(/—/g, '-')
+                    .replace(/…/g, '...')
+                    .replace(/€/g, 'EUR')
+                    .replace(/£/g, 'GBP')
+                    .replace(/¥/g, 'YEN')
+                    .replace(/[©®™]/g, '')
+                    .replace(/°/g, ' degrees')
+                    .replace(/±/g, '+/-')
+                    .replace(/×/g, 'x')
+                    .replace(/÷/g, '/')
+                    .replace(/≤/g, '<=')
+                    .replace(/≥/g, '>=')
+                    .replace(/≠/g, '!=')
+                    .replace(/∞/g, 'infinity')
+                    .replace(/∑/g, 'sum')
+                    .replace(/∫/g, 'integral')
+                    .replace(/√/g, 'sqrt')
+                    .replace(/π/g, 'pi');
             }
-        }
 
-        // Funzione per validare caratteri
-        function validateChars(input, errorId) {
-            const errorDiv = document.getElementById(errorId);
-            if (problematicChars.test(input.value)) {
-                errorDiv.style.display = 'block';
-                return false;
-            } else {
-                errorDiv.style.display = 'none';
-                return true;
-            }
-        }
-
-        // Funzione per aggiornare nome file
-        function updateFileName(input) {
-            const file = input.files[0];
-            const fileNameSpan = document.getElementById('fileName');
-            const errorDiv = document.getElementById('file-error');
-
-            if (file) {
-                // Verifica dimensione file (5MB = 5 * 1024 * 1024 bytes)
-                if (file.size > 5 * 1024 * 1024) {
-                    errorDiv.textContent = 'File troppo grande (max 5MB)';
-                    errorDiv.style.display = 'block';
-                    input.value = '';
-                    fileNameSpan.textContent = '📁 Click to select PDF file';
-                    return;
+            // Funzione per aggiornare contatore caratteri
+            function updateCharCount(input, counterId, maxLength) {
+                const current = input.value.length;
+                const counter = document.getElementById(counterId);
+                if (counter) {
+                    counter.textContent = `${current}/${maxLength}`;
+                    counter.className = current > maxLength * 0.9 ? 'char-count warning' : 'char-count';
                 }
+            }
 
-                // Verifica nome file per caratteri speciali
-                if (problematicChars.test(file.name)) {
-                    errorDiv.textContent = 'Nome file contiene caratteri speciali che potrebbero causare problemi';
+            // Funzione per validare caratteri
+            function validateChars(input, errorId) {
+                const errorDiv = document.getElementById(errorId);
+                if (problematicChars.test(input.value)) {
                     errorDiv.style.display = 'block';
+                    return false;
                 } else {
                     errorDiv.style.display = 'none';
+                    return true;
+                }
+            }
+
+            // Funzione per aggiornare nome file
+            function updateFileName(input) {
+                const file = input.files[0];
+                const fileNameSpan = document.getElementById('fileName');
+                const errorDiv = document.getElementById('file-error');
+
+                if (file) {
+                    // Verifica dimensione file (5MB = 5 * 1024 * 1024 bytes)
+                    if (file.size > 5 * 1024 * 1024) {
+                        errorDiv.textContent = 'File troppo grande (max 5MB)';
+                        errorDiv.style.display = 'block';
+                        input.value = '';
+                        fileNameSpan.textContent = '📁 Click to select PDF file';
+                        return;
+                    }
+
+                    // Verifica nome file per caratteri speciali
+                    if (problematicChars.test(file.name)) {
+                        errorDiv.textContent = 'Nome file contiene caratteri speciali che potrebbero causare problemi';
+                        errorDiv.style.display = 'block';
+                    } else {
+                        errorDiv.style.display = 'none';
+                    }
+
+                    fileNameSpan.textContent = file.name;
+                } else {
+                    fileNameSpan.textContent = '📁 Click to select PDF file';
+                    errorDiv.style.display = 'none';
+                }
+            }
+
+            // Event listeners per validazione in tempo reale
+            document.addEventListener('DOMContentLoaded', function () {
+                const nameInput = document.querySelector('input[name="name"]');
+                const institutionInput = document.querySelector('input[name="institution"]');
+                const titleInput = document.getElementById('paper_title');
+                const coauthorsInput = document.querySelector('textarea[name="coauthors"]');
+
+                if (nameInput) {
+                    nameInput.addEventListener('input', function () {
+                        updateCharCount(this, 'name-count', 200);
+                    });
                 }
 
-                fileNameSpan.textContent = file.name;
-            } else {
-                fileNameSpan.textContent = '📁 Click to select PDF file';
-                errorDiv.style.display = 'none';
-            }
-        }
+                if (institutionInput) {
+                    institutionInput.addEventListener('input', function () {
+                        updateCharCount(this, 'institution-count', 300);
+                    });
+                }
 
-        // Event listeners per validazione in tempo reale
-        document.addEventListener('DOMContentLoaded', function () {
-            const nameInput = document.querySelector('input[name="name"]');
-            const institutionInput = document.querySelector('input[name="institution"]');
-            const titleInput = document.getElementById('paper_title');
-            const coauthorsInput = document.querySelector('textarea[name="coauthors"]');
+                if (titleInput) {
+                    titleInput.addEventListener('input', function () {
+                        updateCharCount(this, 'title-count', 500);
+                        validateChars(this, 'title-error');
+                    });
+                }
 
-            if (nameInput) {
-                nameInput.addEventListener('input', function () {
-                    updateCharCount(this, 'name-count', 200);
-                });
-            }
-
-            if (institutionInput) {
-                institutionInput.addEventListener('input', function () {
-                    updateCharCount(this, 'institution-count', 300);
-                });
-            }
-
-            if (titleInput) {
-                titleInput.addEventListener('input', function () {
-                    updateCharCount(this, 'title-count', 500);
-                    validateChars(this, 'title-error');
-                });
-            }
-
-            if (coauthorsInput) {
-                coauthorsInput.addEventListener('input', function () {
-                    updateCharCount(this, 'coauthors-count', 1000);
-                    validateChars(this, 'coauthors-error');
-                });
-            }
-        });
-
-        // Gestione invio form
-        document.getElementById('paperForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const submitBtn = document.getElementById('submitBtn');
-            const loading = document.getElementById('loading');
-            const titleInput = document.getElementById('paper_title');
-
-            // Aggiorna oggetto email
-            const title = titleInput.value.trim();
-            this.querySelector('input[name="_subject"]').value = `New Paper Submission - ${sanitizeText(title)}`;
-
-            // Sanifica tutti i campi di testo prima dell'invio
-            const textInputs = this.querySelectorAll('input[type="text"], textarea');
-            textInputs.forEach(input => {
-                if (input.value) {
-                    input.value = sanitizeText(input.value);
+                if (coauthorsInput) {
+                    coauthorsInput.addEventListener('input', function () {
+                        updateCharCount(this, 'coauthors-count', 1000);
+                        validateChars(this, 'coauthors-error');
+                    });
                 }
             });
 
-            // Mostra loading e disabilita bottone
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Invio in corso...';
-            loading.style.display = 'block';
+            // Gestione invio form
+            document.getElementById('paperForm').addEventListener('submit', function (e) {
+                e.preventDefault();
 
-            // Timeout per gestire invii lenti
-            const timeout = setTimeout(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Paper';
-                loading.style.display = 'none';
-                alert('L\'invio sta impiegando più tempo del previsto. Riprova o contatta ddivenice@gmail.com');
-            }, 60000);
+                const submitBtn = document.getElementById('submitBtn');
+                const loading = document.getElementById('loading');
+                const titleInput = document.getElementById('paper_title');
 
-            // Invia il form
-            this.submit();
+                // Aggiorna oggetto email
+                const title = titleInput.value.trim();
+                this.querySelector('input[name="_subject"]').value = `New Paper Submission - ${sanitizeText(title)}`;
 
-            // Pulisci timeout se l'invio è completato rapidamente
-            clearTimeout(timeout);
-        });
-    </script>
+                // Sanifica tutti i campi di testo prima dell'invio
+                const textInputs = this.querySelectorAll('input[type="text"], textarea');
+                textInputs.forEach(input => {
+                    if (input.value) {
+                        input.value = sanitizeText(input.value);
+                    }
+                });
+
+                // Mostra loading e disabilita bottone
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Invio in corso...';
+                loading.style.display = 'block';
+
+                // Timeout per gestire invii lenti
+                const timeout = setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Paper';
+                    loading.style.display = 'none';
+                    alert('L\'invio sta impiegando più tempo del previsto. Riprova o contatta ddivenice@gmail.com');
+                }, 60000);
+
+                // Invia il form
+                this.submit();
+
+                // Pulisci timeout se l'invio è completato rapidamente
+                clearTimeout(timeout);
+            });
+        </script>
 </body>
 
 </html>

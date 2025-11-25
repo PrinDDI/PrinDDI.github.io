@@ -1,23 +1,28 @@
 /* Modern Reset & Variables */
 :root {
     /* Colors */
-    --primary-color: #0f172a; /* Deep Midnight Blue */
-    --accent-color: #38bdf8; /* Electric Blue */
+    --primary-color: #0f172a;
+    /* Deep Midnight Blue */
+    --accent-color: #38bdf8;
+    /* Electric Blue */
     --accent-gradient: linear-gradient(135deg, #38bdf8, #818cf8);
-    --text-color: #334155; /* Slate 700 */
-    --text-light: #94a3b8; /* Slate 400 */
-    --bg-color: #f8fafc; /* Slate 50 */
+    --text-color: #334155;
+    /* Slate 700 */
+    --text-light: #94a3b8;
+    /* Slate 400 */
+    --bg-color: #f8fafc;
+    /* Slate 50 */
     --white: #ffffff;
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(255, 255, 255, 0.5);
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    
+
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+
     /* Spacing */
     --container-width: 1200px;
     --header-height: 80px;
@@ -37,7 +42,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     color: var(--primary-color);
     line-height: 1.2;
@@ -189,7 +199,7 @@ img {
     font-size: 4rem;
     margin-bottom: 20px;
     color: var(--white);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero .project-acronym {
@@ -361,23 +371,6 @@ section {
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    text-align: center;
-}
-
-.funding-logos {
-    max-width: 600px;
-    width: 100%;
-    filter: brightness(0) invert(1); /* Make logos white if possible, or keep original */
-    opacity: 0.8;
-    margin-bottom: 30px;
-}
-
-.footer-info p {
-    color: #94a3b8;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
 }
 
 .footer-info strong {
@@ -397,11 +390,11 @@ section {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .menu-toggle {
         display: block;
     }
-    
+
     .nav-links {
         position: absolute;
         top: var(--header-height);
@@ -415,11 +408,11 @@ section {
         transition: transform 0.3s ease;
         z-index: 999;
     }
-    
+
     .nav-links.active {
         transform: translateY(0);
     }
-    
+
     .nav-links a {
         display: block;
         padding: 10px 0;
